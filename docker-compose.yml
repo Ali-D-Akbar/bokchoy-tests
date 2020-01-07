@@ -9,6 +9,7 @@ services:
       - "8000:8000"
     volumes:
       - ./app:/app
+      - /etc/hosts:/etc/hosts
     command: >
       sh -c "python app/manage.py runserver 0.0.0.0:8000
       && python test_polls.py"
@@ -18,6 +19,7 @@ services:
     ports:
       - "4444:4444"
   chrome:
+    container_name: demo.chrome
     image: selenium/node-chrome:3.141.59-yttrium
     volumes:
       - /dev/shm:/dev/shm
@@ -27,6 +29,7 @@ services:
       - HUB_HOST=selenium-hub
       - HUB_PORT=4444
   firefox:
+    container_name: demo.firefox
     image: selenium/node-firefox:3.141.59-yttrium
     volumes:
       - /dev/shm:/dev/shm
