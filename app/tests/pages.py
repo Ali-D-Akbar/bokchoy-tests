@@ -2,7 +2,7 @@ from bok_choy.page_object import PageObject
 
 
 class PollsIndexPage(PageObject):
-    url = 'http://demo.app:8000/polls/'
+    url = 'http://0.0.0.0:8000/polls/'
 
     def is_browser_on_page(self):
         return self.q(css='.questions').is_present()

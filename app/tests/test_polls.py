@@ -19,8 +19,6 @@ class TestPolls(WebAppTest):
         """
         Make sure that the page is accessible.
         """
-        import pdb
-        pdb.set_trace()
         self.polls_index_page.visit()
 
     def test_detail_page(self):
